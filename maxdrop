@@ -1,0 +1,16 @@
+2. MAXDOP (Maximum Degree of Parallelism)
+
+Objetivo: Controlar quantos CPUs podem ser usados por consulta paralela.
+
+Regra Recomendada (Microsoft):
+
+Até 8 vCPUs → MAXDOP = número de cores
+
+Mais de 8 vCPUs → MAXDOP = 8
+
+Como configurar (T-SQL):
+
+EXEC sp_configure 'max degree of parallelism', 8;
+RECONFIGURE;
+
+Obs: Em ambientes OLTP (sistemas transacionais), manter MAXDOP entre 4 e 8 é muito comum.
