@@ -1,0 +1,15 @@
+COST THRESHOLD FOR PARALLELISM
+
+Objetivo: Define quando o SQL deve considerar paralelismo.
+O padrão é 5, e isso é MUITO BAIXO.
+
+Recomendação prática:
+
+OLTP / sistemas comuns: 30 a 50
+
+Ambiente pesado / DW: 50 a 75
+
+Como configurar (T-SQL):
+
+EXEC sp_configure 'cost threshold for parallelism', 50;
+RECONFIGURE;
