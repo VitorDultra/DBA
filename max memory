@@ -1,4 +1,4 @@
-1. MAX SERVER MEMORY (Max Memory)
+MAX SERVER MEMORY (Max Memory)
 
 Objetivo: Evitar que o SQL Server consuma toda a RAM e trave o sistema operacional.
 
