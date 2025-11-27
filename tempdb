@@ -1,0 +1,29 @@
+TEMPDB – Arquivos, tamanhos e autogrowth
+
+Regras recomendadas:
+
+Criar 1 arquivo por núcleo, até o máximo de 8 arquivos.
+
+Exemplo: 4 vCPUs → 4 arquivos.
+
+Mesmo tamanho e autogrowth em todos os arquivos.
+
+Usar autogrowth fixo (ex: 512MB) e não percentual.
+
+Criar arquivos adicionais (T-SQL):
+
+Exemplo para criar 4 arquivos, 1GB cada:
+
+ALTER DATABASE tempdb 
+MODIFY FILE (NAME = tempdev, SIZE = 1024MB, FILEGROWTH = 512MB);
+
+ALTER DATABASE tempdb 
+ADD FILE (NAME = tempdev2, FILENAME = 'D:\DATA\tempdb2.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+
+ALTER DATABASE tempdb 
+ADD FILE (NAME = tempdev3, FILENAME = 'D:\DATA\tempdb3.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+
+ALTER DATABASE tempdb 
+ADD FILE (NAME = tempdev4, FILENAME = 'D:\DATA\tempdb4.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+
+Importante: TempDB só aplica as mudanças após restart do serviço SQL Server.
