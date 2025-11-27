@@ -1,0 +1,19 @@
+1. MAX SERVER MEMORY (Max Memory)
+
+Objetivo: Evitar que o SQL Server consuma toda a RAM e trave o sistema operacional.
+
+Como configurar (T-SQL):
+
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+
+EXEC sp_configure 'max server memory (MB)', 16000;  -- exemplo: 16GB
+RECONFIGURE;
+
+Regra prática para entrevista / vida real:
+
+SQL Server em servidor dedicado:
+
+Deixe entre 70% e 80% da memória para o SQL.
+
+Exemplo com 32GB de RAM: deixar 24GB para o SQL = 24576 MB.
