@@ -1,4 +1,4 @@
-2. MAXDOP (Maximum Degree of Parallelism)
+MAXDOP (Maximum Degree of Parallelism)
 
 Objetivo: Controlar quantos CPUs podem ser usados por consulta paralela.
 
