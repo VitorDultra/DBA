@@ -1,4 +1,4 @@
-Backup FULL: 
+-- Backup FULL: 
 
 BACKUP DATABASE SeuBanco
 TO DISK = 'D:\Backups\SeuBanco_FULL.bak'
@@ -7,7 +7,7 @@ WITH
     COMPRESSION,                -- comprime o backup
     STATS = 5;                  -- progresso
 
-Backup DIFF:
+-- Backup DIFF:
 
 BACKUP DATABASE SeuBanco
 TO DISK = 'D:\Backups\SeuBanco_DIFF.bak'
@@ -17,7 +17,7 @@ WITH
     COMPRESSION,
     STATS = 5;
 
-BAckup LOG: 
+-- BAckup LOG: 
 
 BACKUP LOG SeuBanco
 TO DISK = 'D:\Backups\SeuBanco_LOG.trn'
